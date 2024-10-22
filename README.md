@@ -19,11 +19,14 @@ The Flight Status Application is a web application built with React and TypeScri
 
 ## Technologies Used
 
-🟢 Real-time flight status: Check whether a flight is on time, delayed, or cancelled.
-✈️ Interactive UI: Each flight status is represented with custom styling and emojis to enhance user experience.
-📱 Responsive Design: The application is fully responsive and works seamlessly across devices.
-⚡ TypeScript Integration: Strict typing with TypeScript ensures robustness and reliability.
-🎨 Modern Design: Styled using CSS animations, transitions, and effects for a polished look.
+## 💻 Tech Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 
 ## Installation
@@ -42,3 +45,10 @@ The Flight Status Application is a web application built with React and TypeScri
    npm run dev
    
 2. Open your browser and visit (http://localhost:5173/) to view the application.
+
+
+
+
+
+
+
