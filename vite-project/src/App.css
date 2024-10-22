@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #ffffff);
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+thead {
+  background-color: #2980b9;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+thead th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+thead th:hover {
+  background-color: #1c669d;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #d4edda;
+  transform: translateY(-2px);
+}
+
+td {
+  padding: 15px;
+  color: #555;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+td:hover {
+  color: #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2c3e50;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.status:hover {
+  transform: scale(1.1);
+}
+
+.status.on-time {
+  background-color: #27ae60;
+}
+
+.status.delayed {
+  background-color: #e74c3c;
+}
+
+.status.boarding {
+  background-color: #f39c12;
+}
+
+.status.departed {
+  background-color: #2980b9;
+}
+
+.flight-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flight-detail:hover {
+  transform: translateY(-5px);
+  background-color: #f0f8ff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.flight-detail h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.flight-detail p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9d6d6;
+  border-left: 5px solid #e74c3c;
+}
+
+.loading-message {
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .flight-detail h2 {
+    font-size: 2rem;
+  }
+
+  .flight-detail p {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flight-detail {
+    padding: 20px;
+  }
+
+  .flight-detail h2 {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
