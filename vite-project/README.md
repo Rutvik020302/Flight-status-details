@@ -1,50 +1,19 @@
-# React + TypeScript + Vite
+Flight Status Application ✈️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Overview
+The Flight Status Application is a web application built with React and TypeScript that allows users to view the current status of flights. It shows whether a flight is on time, delayed, cancelled, or boarding. The application provides an intuitive user interface, with status updates represented by dynamic text and emojis for visual clarity.
 
-Currently, two official plugins are available:
+Features
+🟢 Real-time flight status: Check whether a flight is on time, delayed, or cancelled.
+✈️ Interactive UI: Each flight status is represented with custom styling and emojis to enhance user experience.
+📱 Responsive Design: The application is fully responsive and works seamlessly across devices.
+⚡ TypeScript Integration: Strict typing with TypeScript ensures robustness and reliability.
+🎨 Modern Design: Styled using CSS animations, transitions, and effects for a polished look.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tech Stack
+React (Frontend Framework)
+TypeScript (Strictly typed JavaScript)
+HTML5/CSS3 (For markup and styling)
+CSS Flexbox/Grid (Responsive Layout)
+Webpack/ESLint (Build tools and linting)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
