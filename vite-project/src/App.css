@@ -423,7 +423,7 @@ td:hover {
   }
 }
 
-General Styles for Sidebar (Desktop & Laptop View)
+
 /* General Styles for Sidebar (Desktop & Laptop View) */
 body {
     font-family: Arial, sans-serif;
@@ -432,25 +432,25 @@ body {
 }
 
 .sidebar {
-    position: fixed; /* Fix the navbar to the side */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 250px; /* Fixed width for the navbar */
-    height: 100%; /* Full height of the viewport */
-    background-color: #2980b9; /* Navbar background color */
+    width: 250px; 
+    height: 100%; 
+    background-color: #2980b9; 
     color: white;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    z-index: 1000; /* Ensure it stays on top */
-    transition: transform 0.3s ease; /* Smooth slide-in transition */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
+    transition: transform 0.3s ease; 
 }
 
 .navbar-title {
     margin-bottom: 20px;
-    font-size: 1.8rem; /* Title size */
-    text-align: center; /* Center the title */
+    font-size: 1.8rem; 
+    text-align: center; 
     color: rgba(255, 126, 95, 0.8); 
 }
 

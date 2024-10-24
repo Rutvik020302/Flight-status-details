@@ -1,13 +1,11 @@
-// Navbar.tsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Navbar: React.FC = () => {
-  // State to manage the visibility of the navbar links
+  
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the navbar links
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };

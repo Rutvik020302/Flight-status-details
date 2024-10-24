@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FlightTable from '../components/FlightTable';
 import { getFlights } from '../services/flightService';
-import CarouselComponent from '../components/CarouselComponent'; // Import the Carousel
+import CarouselComponent from '../components/CarouselComponent'; 
 
 interface Flight {
   id: string;
@@ -17,13 +17,13 @@ const FlightBoard: React.FC = () => {
   const [flights, setFlights] = useState<Flight[]>([]);
   const [filteredFlights, setFilteredFlights] = useState<Flight[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState<string>(''); // State for the search term
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
 
   const fetchFlights = async () => {
     try {
       const data = await getFlights();
       setFlights(data);
-      setFilteredFlights(data); // Set initial filtered flights to all flights
+      setFilteredFlights(data); 
       setError(null);
     } catch (err) {
       setError('Failed to load flights. Please try again later.');
@@ -53,10 +53,8 @@ const FlightBoard: React.FC = () => {
 
   return (
     <div className="flight-board">
-      {/* Carousel */}
       <CarouselComponent />
 
-      {/* Overlay Container for Title and Search */}
       <div className="overlay">
         <h1 className="travelopia">Travelopia</h1>
         <div className="search-container">
@@ -70,7 +68,6 @@ const FlightBoard: React.FC = () => {
         </div>
       </div>
 
-      {/* Flight Table */}
       <FlightTable flights={filteredFlights} />
     </div>
   );
