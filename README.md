@@ -39,7 +39,10 @@ The Flight Status Application is a web application built with React and TypeScri
 2. Install the dependencies:
    bash
    npm install
-   
+
+## Presentation
+[Project Presentation](https://github.com/user-attachments/assets/270fa727-a34c-4a59-8899-6305a1a5b11a)
+
 
 
 ## Desktop-view
