@@ -708,6 +708,7 @@ body {
   letter-spacing: 2px;
   background: linear-gradient(45deg, #ff7e5f, #feb47b);
   -webkit-background-clip: text; 
+  background-clip: text;  
   -webkit-text-fill-color: transparent; 
   animation: glow 1.5s ease-in-out infinite alternate; 
   position: relative; 
