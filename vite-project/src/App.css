@@ -2,9 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
+ 
 }
 
-body {
+html,body {
+  height: 100%; /* Full height for body */
+  margin: 0; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #eef2f3, #ffffff);
   color: #333;
@@ -21,24 +25,27 @@ h1 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Container settings */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: #e7e1e1;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
+/* Container hover effect */
 .container:hover {
   transform: translateY(-5px);
 }
 
+/* Table settings */
 table {
   width: 100%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   margin-top: 30px;
 }
 
@@ -62,6 +69,7 @@ thead th:hover {
   background-color: #1c669d;
 }
 
+/* Table row styling */
 tbody tr {
   border-bottom: 1px solid #ddd;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -73,31 +81,23 @@ tbody tr:hover {
 }
 
 td {
+  font-weight: bold;
   padding: 15px;
   color: #555;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 td:hover {
-  color: #3498db;
+  color: #000000;
   background-color: rgba(52, 152, 219, 0.1);
 }
 
-a {
-  color: #3498db;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
-a:hover {
-  text-decoration: underline;
-  color: #2c3e50;
-}
-
+/* Status tags styling */
 .status {
   padding: 6px 12px;
   border-radius: 5px;
-  color: rgb(3, 3, 3);
+  color: rgb(252, 244, 244);
   font-weight: bold;
   text-align: center;
   transition: transform 0.3s ease;
@@ -105,6 +105,7 @@ a:hover {
 
 .status:hover {
   transform: scale(1.1);
+  color:black;
 }
 
 .status.on-time {
@@ -122,86 +123,167 @@ a:hover {
 .status.departed {
   background-color: #2980b9;
 }
-/* Flight Detail Card */
+/* Main container for the flight detail with background image */
+.flight-detail-container {
+  position: relative; /* Enables positioning of the child elements */
+  background-image: url('./air.avif'); /* Replace with your actual image path */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents repeating of the image */
+  padding: 50px 20px; /* Adds padding for spacing around the card */
+  /* Add a semi-transparent overlay */
+  background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+  height: 100vh; /* Full height of the viewport */
+ 
+}
+
+
+
+/* Flight detail card */
 .flight-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  max-width: 850px;
-  margin: 50px auto;
-  background: rgba(255, 255, 255, 0.3); /* Glassmorphism background */
-  backdrop-filter: blur(10px); /* Background blur */
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animated gradient background */
-.flight-detail::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:#55a9ea;
-  background-size: 200% 200%;
-  z-index: -1;
-  opacity: 0.2;
-  animation: gradient-animation 6s ease infinite;
-}
-
-
-/* Hover effect on the entire card */
-.flight-detail:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* Title styling */
-.flight-detail h2 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
-  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Paragraph styling */
-.flight-detail p {
-  margin: 15px 0;
-  font-size: 1.4rem;
-  color: #060303;
-  line-height: 1.8;
-  text-align: center;
+  align-items: flex-start; /* Align content to the start for a modern look */
+  padding: 50px;
   max-width: 700px;
+  margin: 0 auto; /* Centers the card */
+  background: rgba(249, 249, 249, 0.7); /* Soft background with transparency */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-/* Button styles */
-.button {
-  margin-top: 30px;
-  padding: 14px 25px;
+
+
+
+/* Title styling - Modern, Bold */
+.flight-detail h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left; 
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Paragraph styling - Clean */
+.flight-detail p {
+  margin: 10px 0;
   font-size: 1.2rem;
-  color: white;
-  background: linear-gradient(135deg, #1e90ff, #00bfff);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.4s ease, transform 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+  max-width: 100%; /* Let text fill the space */
 }
 
+/* Modern Button Styles */
+.button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #ff5e5e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(255, 94, 94, 0.2);
+}
+
+/* Button hover - lighter */
 .button:hover {
-  background: linear-gradient(135deg, #00bfff, #1e90ff);
-  transform: translateY(-4px);
+  background-color: #ff7676;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+
+/* Tablet devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .flight-detail {
+    padding: 20px; /* Less padding on smaller devices */
+  }
+
+  .flight-detail h2 {
+    font-size: 2rem; /* Smaller font size */
+  }
+
+  .flight-detail p {
+    font-size: 1rem; /* Smaller paragraph font */
+  }
+
+  .button {
+    font-size: 0.9rem; /* Smaller button font size */
+  }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .flight-detail {
+    padding: 15px; /* Less padding on mobile */
+  }
+
+  .flight-detail h2 {
+    font-size: 1.6rem; /* Smaller heading font size */
+  }
+
+  .flight-detail p {
+    font-size: 0.9rem; /* Smaller paragraph font */
+  }
+
+  .button {
+    padding: 10px 20px; /* Smaller button size */
+  }
+}
+
+
+/* Responsive design */
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .flight-detail {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .flight-detail h2 {
+    font-size: 2rem;
+  }
+
+  .flight-detail p {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .flight-detail {
+    padding: 15px;
+  }
+
+  .flight-detail h2 {
+    font-size: 1.6rem;
+  }
+
+  .flight-detail p {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
 }
 
 
@@ -217,7 +299,7 @@ a:hover {
   border-radius: 8px;
 }
 
-/* Loading message */
+/* Loading message styling */
 .loading-message {
   font-size: 1.6rem;
   color: #888;
@@ -226,12 +308,39 @@ a:hover {
   animation: pulse 1.5s infinite ease-in-out;
 }
 
+/* Keyframes for animated gradient background */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-
+/* Pulse effect for loading message */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Responsive Design */
 
-/* Tablet devices */
+/* Tablet devices (max-width: 768px) */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
   .flight-detail h2 {
     font-size: 2.2rem;
   }
@@ -244,12 +353,34 @@ a:hover {
     font-size: 1rem;
     padding: 12px 20px;
   }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  td, th {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .flight-detail {
+    padding: 30px;
+    margin: 30px auto;
+  }
 }
 
-/* Mobile devices */
+/* Mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
   .flight-detail {
-    padding: 25px;
+    padding: 20px;
   }
 
   .flight-detail h2 {
@@ -263,5 +394,33 @@ a:hover {
   .button {
     width: 100%;
     padding: 12px 18px;
+  }
+
+  table {
+    font-size: 0.8rem;
+    display: block; /* Make the table block for smaller screens */
+    overflow-x: auto; /* Enable horizontal scroll */
+  }
+
+  td, th {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

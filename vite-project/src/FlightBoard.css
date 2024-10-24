@@ -1,0 +1,38 @@
+/* FlightBoard.css */
+
+/* Light Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
+  
+  .search-container {
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+  }
+  
+  body.light-mode .search-input {
+    border-color: #ccc; /* Light mode border color */
+  }
+  
+  body.dark-mode .search-input {
+    border-color: #555; /* Dark mode border color */
+    background-color: #333; /* Dark mode background */
+    color: #ffffff; /* Dark mode text color */
+  }
+  

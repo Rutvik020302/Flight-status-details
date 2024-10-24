@@ -45,6 +45,7 @@ const FlightDetailPage: React.FC = () => {
   }
 
   return (
+    <div className="flight-detail-container">
     <div className="flight-detail">
       <h2>Flight Details for {flight.flightNumber}</h2>
       <p>Airline: {flight.airline}</p>
@@ -54,6 +55,7 @@ const FlightDetailPage: React.FC = () => {
       <p>Status: {flight.status}</p>
       
       <button className="button" onClick={() => window.history.back()}>Go Back</button>
+    </div>
     </div>
   );
 };

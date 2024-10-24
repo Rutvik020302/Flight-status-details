@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 interface Flight {
   id: string;
@@ -16,6 +16,12 @@ interface FlightTableProps {
 }
 
 const FlightTable: React.FC<FlightTableProps> = ({ flights }) => {
+  const navigate = useNavigate();
+
+  const handleRowClick = (id: string) => {
+    navigate(`/flight/${id}`);
+  };
+
   return (
     <table className="flight-table">
       <thead>
@@ -30,37 +36,14 @@ const FlightTable: React.FC<FlightTableProps> = ({ flights }) => {
       </thead>
       <tbody>
         {flights.map((flight) => (
-          <tr key={flight.id} style={{ cursor: 'pointer' }}>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {flight.flightNumber}
-              </Link>
-            </td>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {flight.airline}
-              </Link>
-            </td>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {flight.origin}
-              </Link>
-            </td>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {flight.destination}
-              </Link>
-            </td>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {new Date(flight.departureTime).toLocaleString()}
-              </Link>
-            </td>
-            <td>
-              <Link to={`/flight/${flight.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {flight.status}
-              </Link>
-            </td>
+          <tr key={flight.id} onClick={() => handleRowClick(flight.id)} style={{ cursor: 'pointer' }}>
+            <td>{flight.flightNumber}</td>
+            <td>{flight.airline}</td>
+            <td>{flight.origin}</td>
+            <td>{flight.destination}</td>
+            <td>{new Date(flight.departureTime).toLocaleString()}</td>
+            <td className={`status ${flight.status.toLowerCase().replace(/\s+/g, '-')}`}>{flight.status}</td>
+
           </tr>
         ))}
       </tbody>
