@@ -7,7 +7,7 @@
 }
 
 html,body {
-  height: 100%; /* Full height for body */
+  height: 100%; 
   margin: 0; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #eef2f3, #ffffff);
@@ -45,7 +45,6 @@ h1 {
 /* Table settings */
 table {
   width: 100%;
-  /* border-collapse: collapse; */
   margin-top: 30px;
 }
 
@@ -125,15 +124,14 @@ td:hover {
 }
 /* Main container for the flight detail with background image */
 .flight-detail-container {
-  position: relative; /* Enables positioning of the child elements */
-  background-image: url('./air.avif'); /* Replace with your actual image path */
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the background image */
-  background-repeat: no-repeat; /* Prevents repeating of the image */
-  padding: 50px 20px; /* Adds padding for spacing around the card */
-  /* Add a semi-transparent overlay */
+  position: relative; 
+  background-image: url('./air.avif'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 50px 20px; 
   background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh; 
  
 }
 
@@ -143,13 +141,13 @@ td:hover {
 .flight-detail {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the start for a modern look */
+  align-items: flex-start; 
   padding: 50px;
   max-width: 700px;
-  margin: 0 auto; /* Centers the card */
-  background: rgba(249, 249, 249, 0.7); /* Soft background with transparency */
+  margin: 0 auto; 
+  background: rgba(249, 249, 249, 0.7); 
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
@@ -177,7 +175,7 @@ td:hover {
   color: #555;
   line-height: 1.7;
   text-align: left;
-  max-width: 100%; /* Let text fill the space */
+  max-width: 100%;
 }
 
 /* Modern Button Styles */
@@ -206,38 +204,38 @@ td:hover {
 /* Tablet devices (max-width: 768px) */
 @media (max-width: 768px) {
   .flight-detail {
-    padding: 20px; /* Less padding on smaller devices */
+    padding: 20px; 
   }
 
   .flight-detail h2 {
-    font-size: 2rem; /* Smaller font size */
+    font-size: 2rem; 
   }
 
   .flight-detail p {
-    font-size: 1rem; /* Smaller paragraph font */
+    font-size: 1rem;
   }
 
   .button {
-    font-size: 0.9rem; /* Smaller button font size */
+    font-size: 0.9rem; 
   }
 }
 
 /* Mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
   .flight-detail {
-    padding: 15px; /* Less padding on mobile */
+    padding: 15px;
   }
 
   .flight-detail h2 {
-    font-size: 1.6rem; /* Smaller heading font size */
+    font-size: 1.6rem; 
   }
 
   .flight-detail p {
-    font-size: 0.9rem; /* Smaller paragraph font */
+    font-size: 0.9rem;
   }
 
   .button {
-    padding: 10px 20px; /* Smaller button size */
+    padding: 10px 20px; 
   }
 }
 
@@ -398,8 +396,8 @@ td:hover {
 
   table {
     font-size: 0.8rem;
-    display: block; /* Make the table block for smaller screens */
-    overflow-x: auto; /* Enable horizontal scroll */
+    display: block; 
+    overflow-x: auto; 
   }
 
   td, th {
@@ -424,3 +422,385 @@ td:hover {
     background-position: 0% 50%;
   }
 }
+
+General Styles for Sidebar (Desktop & Laptop View)
+/* General Styles for Sidebar (Desktop & Laptop View) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed; /* Fix the navbar to the side */
+    top: 0;
+    left: 0;
+    width: 250px; /* Fixed width for the navbar */
+    height: 100%; /* Full height of the viewport */
+    background-color: #2980b9; /* Navbar background color */
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000; /* Ensure it stays on top */
+    transition: transform 0.3s ease; /* Smooth slide-in transition */
+}
+
+.navbar-title {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Title size */
+    text-align: center; /* Center the title */
+    color: rgba(255, 126, 95, 0.8); 
+}
+
+.navbar-links {
+    list-style: none; 
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 15px 0; 
+}
+
+.navbar-links a {
+    display: inline-block; 
+    padding: 12px 20px; 
+    border-radius: 25px; 
+    background: linear-gradient(45deg, #2980b9, #3498db); 
+    color: #ffec40; 
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); 
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    .content {
+        margin-left: 0; 
+    }
+}
+
+/* Optional styles for the main content */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease; 
+}
+
+/* Hover Effect */
+.navbar-links a:hover {
+  background: linear-gradient(45deg, #1c669d, #2980b9); 
+  color: #fff; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+}
+
+
+/* Toggle Button Styles for Small Screens */
+.toggle-button {
+  display: none; 
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 5px;
+}
+
+.toggle-button:hover {
+  background-color: #3498db;
+}
+
+/* Flight Detail Section */
+.flight-detail-container {
+  margin-left: 250px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+  background-image: url('./air.avif'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative; 
+  background-color: rgba(255, 255, 255, 0.5); 
+}
+
+/* Flight Detail Card */
+.flight-detail {
+  background: rgba(249, 249, 249, 0.8); 
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+/* Flight Detail Titles */
+.flight-detail h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Flight Detail Paragraphs */
+.flight-detail p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #ff5e5e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #ff7676;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+
+/* Tablets and Smaller Screens (Max Width: 768px) */
+@media (max-width: 768px) {
+  .flight-detail-container {
+    margin-left: 0; 
+    padding: 20px;
+  }
+
+  .flight-detail {
+    padding: 20px;
+  }
+
+  .flight-detail h2 {
+    font-size: 2rem; 
+  }
+
+  .flight-detail p {
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .toggle-button {
+    display: block; 
+  }
+
+  .sidebar {
+    width: 200px; 
+    transform: translateX(-100%); 
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+  .flight-detail-container {
+    padding: 15px;
+  }
+
+  .flight-detail {
+    padding: 15px;
+  }
+
+  .flight-detail h2 {
+    font-size: 1.6rem;
+  }
+
+  .flight-detail p {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Content adjusts when the sidebar is closed on mobile/tablets */
+.sidebar.open + .flight-detail-container {
+  margin-left: 200px;
+}
+
+/* CarouselComponent CSS */
+
+/* Smaller height for the background carousel */
+.background-carousel {
+  height: 300px; 
+  overflow: hidden;
+}
+
+.background-carousel .carousel-item img {
+  object-fit: cover; 
+  height: 450px; 
+  width: 100%;
+}
+
+/* Positioning the overlay on the carousel */
+.flight-board {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 10; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.travelopia {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  z-index: 11; 
+  color: black;
+  text-align: center; 
+  font-weight: bold;
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  animation: glow 1.5s ease-in-out infinite alternate; 
+  position: relative; 
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 126, 95, 0.8),
+                 0 0 10px rgba(255, 126, 95, 0.6),
+                 0 0 15px rgba(255, 126, 95, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 126, 95, 1),
+                 0 0 30px rgba(255, 126, 95, 0.8),
+                 0 0 40px rgba(255, 126, 95, 0.6);
+  }
+}
+
+/* Optional Decorative Elements */
+.travelopia::before, .travelopia::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 4px; 
+  background-color: #feb47b; 
+  transform: translateX(-50%);
+}
+
+.travelopia::before {
+  top: -10px; 
+  border-radius: 50%; 
+}
+
+.travelopia::after {
+  bottom: -10px; 
+  border-radius: 50%; 
+}
+
+.search-container {
+  width: 100%;
+  max-width: 400px;
+  z-index: 11;
+  position: relative; 
+  margin: 20px auto; 
+}
+
+/* Search Input */
+.search-input {
+  padding: 15px;
+  width: 100%;
+  border: none; 
+  border-radius: 25px; 
+  background: linear-gradient(45deg, #f9f9f9, #e7e1e1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  font-size: 1.2rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+/* Search Input Focus Effect */
+.search-input:focus {
+  outline: none; 
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Placeholder Styling */
+.search-input::placeholder {
+  color: #aaa; 
+  opacity: 0.8; 
+  font-style: italic;
+}
+
+
+/* Adjust heading and input size for responsiveness */
+@media (max-width: 768px) {
+  .travelopia {
+    font-size: 2.5rem;
+  }
+
+  .search-input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .travelopia {
+    font-size: 2rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+  }
+}
+

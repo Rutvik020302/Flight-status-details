@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FlightTable from '../components/FlightTable';
 import { getFlights } from '../services/flightService';
+import CarouselComponent from '../components/CarouselComponent'; // Import the Carousel
 
 interface Flight {
   id: string;
@@ -23,22 +24,21 @@ const FlightBoard: React.FC = () => {
       const data = await getFlights();
       setFlights(data);
       setFilteredFlights(data); // Set initial filtered flights to all flights
-      setError(null); 
-    } catch (err) { 
+      setError(null);
+    } catch (err) {
       setError('Failed to load flights. Please try again later.');
-      console.error(err); 
+      console.error(err);
     }
   };
 
   useEffect(() => {
     fetchFlights();
-    const intervalId = setInterval(fetchFlights, 10000); 
-    return () => clearInterval(intervalId); 
+    const intervalId = setInterval(fetchFlights, 10000);
+    return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
-    // Filter flights whenever the search term changes
-    const results = flights.filter(flight =>
+    const results = flights.filter((flight) =>
       flight.flightNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
       flight.airline.toLowerCase().includes(searchTerm.toLowerCase()) ||
       flight.origin.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -52,27 +52,26 @@ const FlightBoard: React.FC = () => {
   }
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Flight Status Board</h1>
-      
-      {/* Centered search container */}
-      <div style={{ margin: '20px auto', maxWidth: '400px' }}>
-        <input
-          type="text"
-          placeholder="Search flights..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // Update search term on input change
-          style={{
-            padding: '10px',
-            width: '100%',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-          }}
-        />
+    <div className="flight-board">
+      {/* Carousel */}
+      <CarouselComponent />
+
+      {/* Overlay Container for Title and Search */}
+      <div className="overlay">
+        <h1 className="travelopia">Travelopia</h1>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search flights..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} // Update search term on input change
+            className="search-input"
+          />
+        </div>
       </div>
-      
-      <FlightTable flights={filteredFlights} /> {/* Use filtered flights */}
+
+      {/* Flight Table */}
+      <FlightTable flights={filteredFlights} />
     </div>
   );
 };

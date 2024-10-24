@@ -1,7 +1,9 @@
+// FlightDetailPage.tsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFlightById } from '../services/flightService';
-import '../App.css'
+import Navbar from '../components/Navbar'; 
+import '../App.css';
 
 interface FlightDetail {
   id: string;
@@ -11,7 +13,6 @@ interface FlightDetail {
   destination: string;
   departureTime: string;
   status: string;
- 
 }
 
 const FlightDetailPage: React.FC = () => {
@@ -41,21 +42,26 @@ const FlightDetailPage: React.FC = () => {
   }
 
   if (!flight) {
-    return <div>Loading flight details...</div>; 
+    return <div className="loading-message">Loading flight details...</div>; 
   }
 
   return (
     <div className="flight-detail-container">
-    <div className="flight-detail">
-      <h2>Flight Details for {flight.flightNumber}</h2>
-      <p>Airline: {flight.airline}</p>
-      <p>Origin: {flight.origin}</p>
-      <p>Destination: {flight.destination}</p>
-      <p>Departure Time: {new Date(flight.departureTime).toLocaleString()}</p>
-      <p>Status: {flight.status}</p>
-      
-      <button className="button" onClick={() => window.history.back()}>Go Back</button>
-    </div>
+      <Navbar /> {/* Add Navbar here */}
+      <div className="flight-detail">
+        <h2>Flight Details for {flight.flightNumber}</h2>
+        <p>Airline: {flight.airline}</p>
+        <p>Origin: {flight.origin}</p>
+        <p>Destination: {flight.destination}</p>
+        <p>Departure Time: {new Date(flight.departureTime).toLocaleString()}</p>
+        <p>Status: 
+          <span className={`status ${flight.status.toLowerCase()}`}>
+            {flight.status}
+          </span>
+        </p>
+        
+        <button className="button" onClick={() => window.history.back()}>Go Back</button>
+      </div>
     </div>
   );
 };

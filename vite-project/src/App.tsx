@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import FlightBoard from './pages/FlightBoard';
 import FlightDetailPage from './pages/FlightDetailPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 const App: React.FC = () => {
