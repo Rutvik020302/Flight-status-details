@@ -9,6 +9,7 @@ The Flight Status Application is a web application built with React and TypeScri
 - [Installation](#installation)
 
 
+
 ## Features
 
 - View detailed flight information, including flight number, airline, origin, destination, departure time, and status.
@@ -39,12 +40,17 @@ The Flight Status Application is a web application built with React and TypeScri
    bash
    npm install
    
-## Usage
-1. Start the development server:
-   bash
-   npm run dev
-   
-2. Open your browser and visit (http://localhost:5173/) to view the application.
+
+
+## Desktop-view
+![Desktop-view](https://github.com/user-attachments/assets/0a766187-2c84-438d-ab38-0898ba10de19)
+
+## Tablet-view
+![tablet-view](https://github.com/user-attachments/assets/fd437962-102d-40df-bc21-fcc49526b579)
+
+## Mobile-view
+![Mobile-view](https://github.com/user-attachments/assets/f9e4f1f1-703d-480e-bd9e-460827329f42)
+
 
 
 
