@@ -2,13 +2,6 @@
 
 The Flight Status Application is a web application built with React and TypeScript that allows users to view the current status of flights. It shows whether a flight is on time, delayed, cancelled, or boarding. The application provides an intuitive user interface, with status updates represented by dynamic text and emojis for visual clarity.
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-
-
 
 ## Features
 
@@ -41,7 +34,7 @@ The Flight Status Application is a web application built with React and TypeScri
    npm install
 
 ## Presentation
-[Project Presentation](https://github.com/user-attachments/assets/270fa727-a34c-4a59-8899-6305a1a5b11a)
+[Project Presentation Video](https://youtu.be/RDk3FBx3I7M)
 
 
 
